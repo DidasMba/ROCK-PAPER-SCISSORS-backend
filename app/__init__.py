@@ -21,5 +21,3 @@ app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
 # Creating a SQLAlchemy database instance and associating it with the Flask app
 db = SQLAlchemy(app)
 migrate = Migrate(app, db)
-
-check=True
