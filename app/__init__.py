@@ -3,6 +3,10 @@
 from flask import Flask
 from flask_sqlalchemy import SQLAlchemy  
 
+from flask_migrate import Migrate
+
+migrate = Migrate(app, db)
+
 # Creating a Flask web application instance
 app = Flask(__name__)
 
