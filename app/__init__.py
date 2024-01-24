@@ -23,3 +23,6 @@ db = SQLAlchemy(app)
 migrate = Migrate(app, db)
 
 check=True
+
+
+string="Hello world"
