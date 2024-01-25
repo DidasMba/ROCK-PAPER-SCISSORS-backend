@@ -5,17 +5,18 @@ auth_bp = Blueprint('auth', __name__, url_prefix='/auth')
 
 @auth_bp.route('/register', methods=['POST'])
 def register():
-    data = request.get_json()
-    result, status_code = register_user(data)
-    return jsonify(result), status_code
+    data = request.json
+    response = register_user(data)
+    return jsonify(response)
 
 @auth_bp.route('/login', methods=['POST'])
 def login():
-    data = request.get_json()
-    result, status_code = login_user(data)
-    return jsonify(result), status_code
+    data = request.json
+    response = login_user(data)
+    return jsonify(response)
 
 @auth_bp.route('/logout', methods=['POST'])
 def logout():
-    result, status_code = logout_user()
-    return jsonify(result), status_code
+    response = logout_user()
+    return jsonify(response)
+
