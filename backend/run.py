@@ -1,12 +1,16 @@
-from app import app, db
-
-# Importez vos modèles ici, si nécessaire
+# In run.py
 from app.database.models import User
 
+
+from app import app, db
+
+
+
+
 if __name__ == '__main__':
-    # Créez les tables de la base de données si elles n'existent pas encore
+    # Create database tables if they don't exist
     with app.app_context():
         db.create_all()
 
-    # Lancer l'application Flask
+    # Run the Flask application
     app.run(debug=True)
